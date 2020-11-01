@@ -1,11 +1,16 @@
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+<% else %>
 <div class="center jumbotron" style="background-color: #e0ffff;">
   <div class="text-center">
-    <h1>hoCori</h1>
+    <h1>hoCcori</h1>
     <p>日常のちょっとした幸せをみんなにおすそ分けする場所です。
     <br>心が”ほっこり（hoccori）”するようなエピソードや写真を
     <br>たくさんたくさん、お待ちしています。</p>
   </div>
 </div> 
 <div class="text-center">
-<%= link_to 'ユーザ登録', signup_path, class: 'btn btn-outline-primary w-50' %>
+<%= link_to 'ログイン', login_path, class: 'btn btn-outline-primary w-50' %>
+<%= link_to 'ユーザ登録', signup_path, class: 'btn btn-outline-primary w-50 mt-3' %>
 </div>
+<% end %>

@@ -1,7 +1,7 @@
 <% if logged_in? %>
   <p>ログイン完了ユーザ: <%= current_user.name %></p>
 <% else %>
-<div class="center jumbotron" style="background-color: #e0ffff;">
+<div class="center jumbotron" style="background: url(<%= asset_path "toppage.jpg" %>); background-size:cover;">
   <div class="text-center">
     <h1>hoCcori</h1>
     <p>日常のちょっとした幸せをみんなにおすそ分けする場所です。

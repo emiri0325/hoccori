@@ -1,0 +1,19 @@
+<div class="row">
+  <aside class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+      </div>
+      <div class="text-center">
+          <h3><%= @user.name %></h3> 
+      </div>
+  </aside>
+  <div class="col-sm-8">
+    <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><a href="#" class="nav-link">投稿</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">フォロー</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">フォロワー</a></li>
+      <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-heart"></i></a></li>
+    </ul>
+  </div>
+</div>

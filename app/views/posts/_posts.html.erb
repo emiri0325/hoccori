@@ -1,21 +1,28 @@
 <ul class="list-unstyled">
   <% posts.each do |post| %>
     <li class="media mb-3">
-      <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 50 }) %>" alt="">
+      
+      <div class="border" style="padding:10px;">
+      
+      <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 40 }) %>" alt="">
       <div class="media-body">
         <div>
           <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
         </div>
         <div>
-          <p class="mb-0"><%= post.content %></p>
-        </div>
+          <p class="mb-2"><%= post.content %></p>
         <div>
           <% if current_user == post.user %>
-            <%= link_to  "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
-            <i class="fas fa-trash-alt"></i>
+            <%= link_to post, method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+            <i class="fas fa-trash-alt fa-pull-right" style="color: #696969;" ></i>
           <% end %>
-        </div>        
+          <% end %>
+        </div>
+        </div>
       </div>
+      
+      </div>
+      
     </li>
   <% end %>
   <%= paginate posts %>

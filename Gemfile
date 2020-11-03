@@ -61,3 +61,6 @@ gem 'carrierwave'
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end
+
+# エラーメッセージの日本語化
+gem 'rails-i18n'

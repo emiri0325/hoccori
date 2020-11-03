@@ -29,5 +29,8 @@ module Hoccori
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    
+    # エラーメッセージの日本語化
+    config.i18n.default_locale = :ja
   end
 end

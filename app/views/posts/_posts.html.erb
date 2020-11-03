@@ -14,7 +14,7 @@
         <div>
           <% if current_user == post.user %>
             <%= link_to post, method: :delete, data: { confirm: "本当に削除しますか？" } do %>
-            <i class="fas fa-trash-alt" style="color: #696969;" ></i>
+            <i class="fas fa-trash-alt fa-pull-right" style="color: #696969;" ></i>
           <% end %>
           <% end %>
         </div>

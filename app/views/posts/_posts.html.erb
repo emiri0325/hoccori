@@ -14,8 +14,9 @@
         <div>
           <% if current_user == post.user %>
             <%= link_to post, method: :delete, data: { confirm: "本当に削除しますか？" } do %>
-            <i class="fas fa-trash-alt fa-pull-right" style="color: #696969;" ></i>
+            <span title="削除する"><i class="fas fa-trash-alt fa-pull-right" style="color: #696969;" ></i></span>
           <% end %>
+          <%= render 'favorites/like_button', post: post %>
           <% end %>
         </div>
         </div>

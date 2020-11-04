@@ -17,8 +17,8 @@
         <p><span style="font-size:5px;">フォロー<span class="badge badge-secondary"><%= @count_followings %></span></p></a></li>
       <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link"><i class="fas fa-user-friends fa-3x" style="color: #696969;"></i>
         <p><span style="font-size:5px;">フォロワー<span class="badge badge-secondary"><%= @count_followers %></span></p></a></li>
-      <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-heart fa-3x" style="color: #696969;"></i>
-        <p><span style="font-size:5px;">いいね</span></p></a></li>
+      <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link"><i class="fas fa-heart fa-3x" style="color: #696969;"></i>
+        <p><span style="font-size:5px;">いいね<span class="badge badge-secondary"><%= @count_likes %></span></p></a></li>
     </ul>
     <%= render 'users', users: @followings %>
   </div>

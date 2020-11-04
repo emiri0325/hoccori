@@ -10,23 +10,28 @@
     <%= render 'layouts/error_messages', model: f.object %>
       
       <div class="form-group">
-        <%= f.label :name, '名前' %>
+        <%= f.label :name, '名前' %> <span class="badge badge-danger">必須</span>
         <%= f.text_field :name, class: 'form-control', placeholder: '例：ほっこり太郎' %>
+        <span style="font-size:5px;">※ 50文字以内で入力してください</span>
       </div>
 
       <div class="form-group">
-        <%= f.label :email, 'メールアドレス' %>
+        <%= f.label :email, 'メールアドレス' %> <span class="badge badge-danger">必須</span>
         <%= f.email_field :email, class: 'form-control', placeholder: '例：hoccori@mail.com' %>
+        <span style="font-size:5px;">※ 大文字・小文字の区別はありません
+        <br>※ 255文字以内で入力してください</span>
       </div>
 
       <div class="form-group">
-        <%= f.label :password, 'パスワード' %>
+        <%= f.label :password, 'パスワード' %> <span class="badge badge-danger">必須</span>
         <%= f.password_field :password, class: 'form-control', placeholder: '例：Hoccori123' %>
+        <span style="font-size:5px;">※ ログインに使用するパスワードを設定してください</span>
       </div>
 
       <div class="form-group">
-        <%= f.label :password_confirmation, 'パスワード（確認用）' %>
+        <%= f.label :password_confirmation, 'パスワード（確認用）' %> <span class="badge badge-danger">必須</span>
         <%= f.password_field :password_confirmation, class: 'form-control', placeholder: '例：Hoccori123' %>
+        <span style="font-size:5px;">※ 確認のため、もう一度パスワードを入力してください</span>
       </div>
       <div class="text-right">
       <%= f.submit 'ユーザ登録', class: 'btn btn-primary' %>

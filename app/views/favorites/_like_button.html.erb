@@ -1,15 +1,19 @@
   <% if current_user.like?(post) %>
     <%= form_with(model: current_user.favorites.find_by(post_id: post.id), local: true, method: :delete, class: 'd-inline') do |f| %>
       <%= hidden_field_tag :post_id, post.id %>
+      <span title="いいね を取り消す">
       <%= button_tag :type => "submit", class: 'btn btn-outline-primary' do  %>
-        <span title="いいね を取り消す"><i class="fas fa-heart"></i></span>
+        <i class="fas fa-heart"></i>
       <% end %>
+      </span>
     <% end %>
   <% else %>
     <%= form_with(model: current_user.favorites.build, local: true, class: 'd-inline') do |f| %>
       <%= hidden_field_tag :post_id, post.id %>
+      <span title="いいね をする">
       <%= button_tag :type => "submit", class: 'btn btn-outline-primary' do  %>
-        <span title="いいね をする"><i class="far fa-heart"></i></span>
-      <% end %>    
+        <i class="far fa-heart"></i>
+      <% end %>   
+      </span>
     <% end %>
   <% end %>

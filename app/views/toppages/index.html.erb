@@ -4,7 +4,8 @@
       <%= form_with(model: @post, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
         <div class="form-group">
-          <%= f.text_area :content, class: 'form-control', rows: 5 %>
+          <%= f.text_area :content, class: 'form-control', placeholder: '今日はどんな "ほっこり" を見つけましたか？', rows: 5 %>
+          <span style="font-size:5px;">※ 255文字以内で入力してください</span>
         </div>
         <div class="text-right">
         <%= f.submit '投稿', class: 'btn btn-primary' %>

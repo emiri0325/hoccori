@@ -7,6 +7,10 @@
           <%= f.text_area :content, class: 'form-control', placeholder: '今日はどんな "ほっこり" を見つけましたか？', rows: 5 %>
           <span style="font-size:5px;">※ 255文字以内で入力してください</span>
         </div>
+        
+        <%= f.label :画像 %>
+        <%= f.file_field :img, id: :post_img %>        
+        
         <div class="text-right">
         <%= f.submit '投稿', class: 'btn btn-primary' %>
         </div>

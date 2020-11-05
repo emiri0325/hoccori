@@ -6,6 +6,10 @@
       
       <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 40 }) %>" alt="">
       <div class="media-body">
+      
+      <%= image_tag post.img.to_s %> 
+        
+        
         <div>
           <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
         </div>

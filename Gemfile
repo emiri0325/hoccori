@@ -57,6 +57,7 @@ gem 'kaminari'
 
 # 画像投投稿機能
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'

@@ -8,8 +8,10 @@
           <span style="font-size:5px;">※ 255文字以内で入力してください</span>
         </div>
         
-        <%= f.label :画像 %>
-        <%= f.file_field :img, id: :post_img %>        
+        <%= f.label :画像を添付 %>
+        <div>
+          <%= f.file_field :img, id: :post_img %>   
+        </div>
         
         <div class="text-right">
         <%= f.submit '投稿', class: 'btn btn-primary' %>

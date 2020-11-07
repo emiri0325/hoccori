@@ -20,6 +20,19 @@ before_action :correct_user, only: [:destroy]
     redirect_back(fallback_location: root_path)    
   end
   
+  def edit
+    @post = current_user.posts.find_by(id: params[:id])
+  end
+  
+  def update
+    @post = current_user.posts.find_by(id: params[:id])
+    if @post.update(post_params)
+      redirect_to root_url
+    else
+      render :new
+    end  
+  end
+  
   private
 
   def post_params

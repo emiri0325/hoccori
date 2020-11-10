@@ -22,14 +22,21 @@ before_action :correct_user, only: [:destroy]
   
   def edit
     @post = current_user.posts.find_by(id: params[:id])
+    if @post
+      render "posts/edit"
+    else
+      redirect_to login_url
+    end  
   end
-  
+
   def update
     @post = current_user.posts.find_by(id: params[:id])
     if @post.update(post_params)
+      flash[:success] = '更新しました。'
       redirect_to root_url
     else
-      render :new
+      flash[:success] = '更新できませんでした。'
+      redirect_back(fallback_location: root_path)   
     end  
   end
   

@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   resources :posts, only: [:create, :destroy, :edit, :update] 
   resources :relationships, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
+  
+  get '*path', controller: 'application', action: 'render_404'
 end

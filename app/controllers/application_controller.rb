@@ -1,6 +1,19 @@
 class ApplicationController < ActionController::Base
     
-  include SessionsHelper    
+  include SessionsHelper
+  
+# 例外処理
+rescue_from ActiveRecord::RecordNotFound, with: :render_404
+rescue_from ActionController::RoutingError, with: :render_404
+rescue_from Exception, with: :render_500  
+
+def render_404
+  redirect_to root_url
+end
+
+def render_500
+  redirect_to root_url
+end
     
   private
 

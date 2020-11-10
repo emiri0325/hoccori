@@ -25,7 +25,7 @@ before_action :correct_user, only: [:destroy]
     if @post
       render "posts/edit"
     else
-      redirect_to login_url
+      redirect_to root_url
     end  
   end
 
